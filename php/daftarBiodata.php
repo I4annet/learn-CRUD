@@ -70,7 +70,7 @@
         ?>
       </table>
       <div style="margin-right: 40px; margin-top: 10px; text-align: end">
-      <a href="../pages/Utama.php">
+      <a href="/learn-CRUD/pages/index.php">
           <button type="button" class="button-add">
               <i class='fa fa-plus'></i> 
           </button>

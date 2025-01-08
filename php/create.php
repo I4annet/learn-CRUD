@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $jurusan = $_POST["jurusan"];
     $prodi = $_POST["prodi"];
 
-    $query = "INSERT INTO mahasiswa (NIM, nama, kelas, jurusan, prodi) VALUES (?, ?, ?, ?, ?)";
+    $query = "EXEC tambahMahasiswa ?, ?, ?, ?, ?";
     $params = array($nim, $nama, $kelas, $jurusan, $prodi);
 
     if (strlen($nim) == 10) {

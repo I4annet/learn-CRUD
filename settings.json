@@ -1,0 +1,10 @@
+"mssql.connections": [
+    {
+        "server": "LAPTOP-A03UJBN1\SQLEXPRESS",
+        "database": "belajarsql",
+        "username": "",
+        "password": "",
+        "encrypt": true,
+        "trustServerCertificate": false
+    }
+]
