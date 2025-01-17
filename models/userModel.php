@@ -8,7 +8,8 @@ require_once 'config/database.php';
             $this->pdo = $this->getPDOConnection();
         }
 
-        private function getPDOConnection() {
+        private function getPDOConnection() 
+        {
             return getPDOConnection();
         }
 
