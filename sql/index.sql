@@ -1,1 +1,1 @@
-SELECT * FROM customer;
+--- WHAT ARE YOU DOING HERE?!
