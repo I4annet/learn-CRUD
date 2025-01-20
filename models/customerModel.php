@@ -22,7 +22,7 @@ require_once 'config/database.php';
                 $stmt->bindParam(':address', $address);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':password', $password);
-                $stnm->bindParam(':phone_number', $phone_number);
+                $stmt->bindParam(':phone_number', $phone_number);
                 $stmt->execute();
                 return ['status' => 'success', 'message' => 'Data berhasil ditambahkan'];
             } catch (PDOException $e) {
