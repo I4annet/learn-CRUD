@@ -13,15 +13,16 @@ require_once 'config/database.php';
             return getPDOConnection();
         }
 
-        public function createCustomer($id, $name, $address, $email, $password) {
+        public function createCustomer($id, $name, $address, $email, $password, $phone_number) {
             try {
-                $query = "INSERT INTO mahasiswa (id, name, address, email, password) VALUES (:id, :name, :address, :email, :password)";
+                $query = "INSERT INTO mahasiswa (id, name, address, email, password, phone_number) VALUES (:id, :name, :address, :email, :password, :phone_number)";
                 $stmt = $this->pdo->prepare($query);
                 $stmt->bindParam(':id', $id);
                 $stmt->bindParam(':name', $name);
                 $stmt->bindParam(':address', $address);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':password', $password);
+                $stnm->bindParam(':phone_number', $phone_number);
                 $stmt->execute();
                 return ['status' => 'success', 'message' => 'Data berhasil ditambahkan'];
             } catch (PDOException $e) {
@@ -42,11 +43,14 @@ require_once 'config/database.php';
 
         public function updateCustomer() {
             try {
-                $query = "UPDATE customer SET name = :name, address = :address WHERE id = :id";
+                $query = "UPDATE customer SET name = :name, address = :address, email = :email, password = :password, phone_number = :phone_number WHERE id = :id";
                 $stmt = $this->pdo->prepare($query);
                 $stmt->bindParam(':id', $id);
                 $stmt->bindParam(':name', $name);
                 $stmt->bindParam(':address', $address);
+                $stmt->bindParam(':email', $email);
+                $stmt->bindParam(':password', $password);
+                $stmt->bindParam(':phone_number', $phone_number);
                 $stmt->execute();
                 return ['status' => 'success', 'message' => 'Data berhasil diupdate'];
             } catch (PDOException $e) {
